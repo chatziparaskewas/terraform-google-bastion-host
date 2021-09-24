@@ -75,6 +75,7 @@ module "instance_template" {
       enable-oslogin = "TRUE"
     }
   )
+  alias_ip_range = var.alias_ip_range
 }
 
 resource "google_compute_instance_from_template" "bastion_vm" {
