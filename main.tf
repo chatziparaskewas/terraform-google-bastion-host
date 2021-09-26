@@ -43,9 +43,9 @@ resource "google_service_account" "bastion_host" {
 }
 
 module "instance_template" {
-  source  = "terraform-google-modules/vm/google//modules/instance_template"
-  version = "~> 6.0"
-
+  source = "github.com/chatziparaskewas/terraform-google-vm//modules/instance_template?ref=reservation-affinity"
+  #version = "~> 6.0"
+  
   name_prefix        = var.name_prefix
   project_id         = var.project
   machine_type       = var.machine_type
