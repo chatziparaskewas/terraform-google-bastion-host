@@ -19,6 +19,9 @@
 Session.vim
 .netrwhist
 
+# Eclipse
+.project
+
 ### https://raw.github.com/github/gitignore/90f149de451a5433aebd94d02d11b0e28843a1af/Terraform.gitignore
 
 # Local .terraform directories
@@ -43,7 +46,7 @@ crash.log
 # version control.
 **/*.tfvars
 
-credentials.json
+credentials*.json
 
 # tf lock file
 .terraform.lock.hcl
