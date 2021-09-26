@@ -74,6 +74,7 @@ module "instance_template" {
     }
   )
   alias_ip_range = var.alias_ip_range
+  reservation_affinity = var.reservation_affinity
 }
 
 resource "google_compute_instance_from_template" "bastion_vm" {
