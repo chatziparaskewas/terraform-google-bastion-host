@@ -73,6 +73,8 @@ module "instance_template" {
       enable-oslogin = "TRUE"
     }
   )
+  
+  reservation_affinity = var.reservation_affinity
 }
 
 resource "google_compute_instance_from_template" "bastion_vm" {
