@@ -43,19 +43,17 @@ resource "google_service_account" "bastion_host" {
 }
 
 module "instance_template" {
-  #source  = "terraform-google-modules/vm/google//modules/instance_template"
-  source = "github.com/chatziparaskewas/terraform-google-vm//modules/instance_template?ref=lio-volta2"
+  source = "github.com/chatziparaskewas/terraform-google-vm//modules/instance_template?ref=lio-volta"
   #version = "~> 7.3"
-
-  name_prefix         = var.name_prefix
-  project_id          = var.project
-  machine_type        = var.machine_type
-  disk_size_gb        = var.disk_size_gb
-  disk_type           = var.disk_type
-  subnetwork          = var.subnet
-  subnetwork_project  = var.host_project
+  
+  name_prefix        = var.name_prefix
+  project_id         = var.project
+  machine_type       = var.machine_type
+  disk_size_gb       = var.disk_size_gb
+  disk_type          = var.disk_type
+  subnetwork         = var.subnet
+  subnetwork_project = var.host_project
   additional_networks = var.additional_networks
-
   service_account = {
     email  = local.service_account_email
     scopes = var.scopes
@@ -77,7 +75,6 @@ module "instance_template" {
     }
   )
   alias_ip_range = var.alias_ip_range
-  
   reservation_affinity = var.reservation_affinity
 }
 
