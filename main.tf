@@ -43,7 +43,7 @@ resource "google_service_account" "bastion_host" {
 }
 
 module "instance_template" {
-  source = "github.com/chatziparaskewas/terraform-google-vm//modules/instance_template?ref=lio-volta"
+  source = "github.com/chatziparaskewas/terraform-google-vm//modules/instance_template?ref=lio-volta2"
   #version = "~> 7.3"
   
   name_prefix        = var.name_prefix
